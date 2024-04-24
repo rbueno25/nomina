@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.frm {
+    background-color:#0d1b42fb;
+    width: 375px;
+    height: 60vh;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.titu {
+    font-size: 30px;
+    text-align: left;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.input-groupt {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+}
+
+.input-feild {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+    margin: 10px;
+    height: 35px;
+    width: 90%;
+}
+
+input[type="text"], input[type="password"] {
+    height: 32px;
+    border: none;
+    background-color:#172f74e3;
+    border-radius: 5px;
+    color:  rgba(255, 255, 255, 0.808); 
+    font-size: 14px;
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid #4485e7fb;
+}
+
+.lala {
+    display: flex;
+    flex-direction: column;
+}
+
+.button{
+    margin: 40px;
+    text-align: center;
+    align-items: center;
+}
+
+.button button{
+    width: 60%;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    background-color: #4485e7fb;
+    color: white;
+}
