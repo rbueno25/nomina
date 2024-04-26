@@ -1,10 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Login from './Login'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Dashboard from './app/Dashboard';
+import './css/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Login />
+    <Dashboard />
   </React.StrictMode>,
 )
