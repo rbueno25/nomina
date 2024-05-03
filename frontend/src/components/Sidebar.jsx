@@ -3,62 +3,65 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { MdSpaceDashboard } from "react-icons/md";
 import { GoHomeFill } from "react-icons/go";
 import { FaUserAlt } from "react-icons/fa";
+import { AiFillCreditCard } from "react-icons/ai";
+import { MdMoneyOff, MdPeopleAlt } from "react-icons/md";
+import { SlLogout } from "react-icons/sl";
+import Table from './Table';
 import '../css/Sidebar.css';
 
 const Sidebar = () => {
   return (
+    <>
+        <div class="sidebar">
+        <div class="logo-details">
+        <MdSpaceDashboard className='icon'/>
+            <span class="logo-name">Corcell</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="bienvenido.php">
+                <GoHomeFill className='icon'/>
+                    <span class="link-name">Dashboard</span>
+                </a>
+            </li>
 
-    <div class="sidebar">
-    <div class="logo-details">
-      <MdSpaceDashboard />
-        <span class="logo-name">Corcell</span>
+            <li>
+                <a href="productos.php">
+                <AiFillCreditCard className='icon'/>
+                    <span class="link-name">Percepciones</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="mostrar-proveedor.php">
+                <MdMoneyOff className='icon'/>
+                    <span class="link-name">Deducciones</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="mostrar-compra.php">
+                <MdPeopleAlt className='icon'/>
+                    <span class="link-name">Empleados</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="usuario.php">
+                    <FaUserAlt className='icon'/>
+                    <span class="link-name">Usuarios</span>
+                </a>
+            </li>
+            
+        </ul>
+
+        <div className="button">
+            <button> <SlLogout className='out'/> Salir</button>
+        </div>
     </div>
-    <ul class="nav-links">
-        <li>
-            <a href="bienvenido.php">
-              <GoHomeFill />
-                <span class="link-name">Inicio</span>
-            </a>
-        </li>
 
-        <li>
-            <a href="productos.php">
-                <i class='bx bxs-basket'></i>
-                <span class="link-name">Productos</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="mostrar-proveedor.php">
-                <i class='bx bx-package'></i>
-                <span class="link-name">Proveedores</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="usuario.php">
-                <FaUserAlt />
-                <span class="link-name">Usuarios</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="mostrar-compra.php">
-                <i class='bx bx-receipt'></i>
-                <span class="link-name">Orden de compra</span>
-            </a>
-        </li>
-        
-         <li>
-            <a href="logout.php" class="salir">
-                <i class='bx bx-log-out'></i>
-                <span class="link-name">Salir</span>
-            </a>
-        </li>
-
-
-    </ul>
-</div>
+    <Table columns='lalalalalal' rows='lalalalal'/>
+</>
   )
 }
 
