@@ -7,9 +7,11 @@ const Path = () => {
     return(
         <Router >
             <Routes>
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/home" element={<Dashboard />} />
                 <Route path="/login" element={<Login />} />
             </Routes>
         </Router>
     )
 }
+
+export default Path

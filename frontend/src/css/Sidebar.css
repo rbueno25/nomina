@@ -75,13 +75,13 @@
     margin-right: 10px;
 }
 
-.button {
+.boton {
     position: relative;
     text-align: center;
     align-items: center;
 }
 
-.button button {
+.boton button {
     background-color:rgba(201, 28, 22, 0.863);
     color: #fff;
     border: none;
@@ -92,5 +92,5 @@
 }
 
 button:hover{
- 
+ cursor: pointer;
 }

@@ -55,7 +55,7 @@ const Sidebar = () => {
             
         </ul>
 
-        <div className="button">
+        <div className="boton">
             <button> <SlLogout className='out'/> Salir</button>
         </div>
     </div>
