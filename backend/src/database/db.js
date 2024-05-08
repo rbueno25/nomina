@@ -7,7 +7,7 @@ const conection = {
   host: config.mysql.host,
   user: config.mysql.user,
   password: config.mysql.password,
-  database: config.mysql.database,
+  database: config.mysql.dbname,
 };
 
 const Dbase = db.createConnection(conection);
@@ -96,7 +96,7 @@ const delet = (table, id) => {
 const login = (table, data) => {
   return new Promise((resolve, reject) => {
     Dbase.query(
-      `SELECT * FROM ${table} WHERE usuario = '${data.user}' and clave = '${data.clave}' `,
+      `SELECT * FROM ${table} WHERE Nombre = '${data.username}' and Clave = '${data.clave}' `,
       (err, res) => {
         err ? reject(err) : resolve(res);
       }

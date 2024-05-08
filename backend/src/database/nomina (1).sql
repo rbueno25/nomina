@@ -83,7 +83,6 @@ CREATE TABLE `empleados` (
   `Nombre` varchar(255) DEFAULT NULL,
   `Apellido` varchar(255) DEFAULT NULL,
   `Correo` varchar(255) DEFAULT NULL,
-  `Clave` varchar(255) DEFAULT NULL,
   `Telefono` varchar(255) DEFAULT NULL,
   `Direccion` varchar(255) DEFAULT NULL,
   `Estado` varchar(255) DEFAULT NULL,
@@ -92,7 +91,8 @@ CREATE TABLE `empleados` (
   `FechaInicio` date DEFAULT NULL,
   `ID_TipoContrato` int(11) DEFAULT NULL,
   `ID_Cargo` int(11) DEFAULT NULL,
-  `ID_Departamento` int(11) DEFAULT NULL
+  `ID_Departamento` int(11) DEFAULT NULL,
+  `SalarioBase` decimal(10, 0) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

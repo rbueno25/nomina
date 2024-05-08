@@ -6,7 +6,9 @@ const cookie = require("cookie-parser")
 const config =  require("./config")
 
 // modulos del clietnte
-
+const clientes = require("./Module/usuario/router");
+const login = require("./Module/usuario/router");
+const percepciones = require("./Module/percepciones/router");
 
 const  app = express()
 
@@ -20,7 +22,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(
     cors({
-        origin: "http://localhost::5173",
+        origin: "http://localhost:5173",
         credentials: true
     })
 )
@@ -29,5 +31,6 @@ app.use(cookie())
 
 app.use("/api/clientes", clientes)
 app.use("/api/users", login)
+app.use("/api/percepciones", percepciones)
 
 module.exports = app;
