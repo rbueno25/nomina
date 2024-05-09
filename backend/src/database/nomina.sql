@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-04-2024 a las 16:45:55
+-- Tiempo de generación: 09-05-2024 a las 15:31:00
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -30,8 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `cargo` (
   `IdCargo` int(11) NOT NULL,
   `Nombre` varchar(255) DEFAULT NULL,
-  `Descripcion` varchar(255) DEFAULT NULL
+  `Descripcion` varchar(255) DEFAULT NULL,
+  `Id_Departamento` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `cargo`
+--
+
+INSERT INTO `cargo` (`IdCargo`, `Nombre`, `Descripcion`, `Id_Departamento`) VALUES
+(1, 'Director de RRHH', ' profesional encargado de buscar, seleccionar y contratar a las personas más aptas y preparadas para cubrir los puestos de trabajo que se ofrecen en su empresa.', 1),
+(2, 'Gerente Informática.', 'es responsable de la estrategia, las operaciones y las iniciativas asociadas de Tecnología de la Información (TI) para desarrollar y apoyar el Plan Estratégico de la compañía.', 4),
+(3, 'Gerente Transformación Digital', 'DescripcionCargo3', 4),
+(4, 'Contador', 'DescripcionCargo4', 3),
+(5, 'Técnico de selección', 'Se encarga de seleccionar y entrevistar candidatos para cubrir un determinado puesto de trabajo', 1);
 
 -- --------------------------------------------------------
 
@@ -53,10 +65,20 @@ CREATE TABLE `deducciones` (
 --
 
 CREATE TABLE `departamento` (
-  `IdDepartamento` int(11) NOT NULL,
+  `Id_Departamento` int(11) NOT NULL,
   `Nombre` varchar(255) DEFAULT NULL,
   `Descripcion` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `departamento`
+--
+
+INSERT INTO `departamento` (`Id_Departamento`, `Nombre`, `Descripcion`) VALUES
+(1, 'Rec. Humanos', 'Recursos Humanos es el departamento de una empresa que se encarga de encontrar, seleccionar, reclutar y capacitar a las personas que solicitan un empleo, así como administrar las prestaciones o beneficios que se les otorgan.'),
+(2, 'Administracion', 'Coordinar y dirigir los procesos que permitan asegurar el adecuado funcionamiento operativo de la institución. '),
+(3, 'Contabilidad', 'Preparar informes contables para las autoridades competentes y especialmente para la Dirección General de Contabilidad Gubernamental.'),
+(4, 'TI', ' gestionar la infraestructura informática de una empresa y mantenerla en funcionamiento. ');
 
 -- --------------------------------------------------------
 
@@ -92,8 +114,16 @@ CREATE TABLE `empleados` (
   `ID_TipoContrato` int(11) DEFAULT NULL,
   `ID_Cargo` int(11) DEFAULT NULL,
   `ID_Departamento` int(11) DEFAULT NULL,
-  `SalarioBase` decimal(10, 0) DEFAULT NULL
+  `SalarioBase` decimal(10,0) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`IdEmpleados`, `Cedula`, `Nombre`, `Apellido`, `Correo`, `Telefono`, `Direccion`, `Estado`, `Pais`, `FechaNac`, `FechaInicio`, `ID_TipoContrato`, `ID_Cargo`, `ID_Departamento`, `SalarioBase`) VALUES
+(1, 'QRWE12-QYW5', 'Carlos', 'Jimenez', 'cjimenez20@gmail.com', '8092190893', 'Balbastro 770, Buenos Aires', 'Santo Domingo', 'Republica Dominicana', '2000-05-01', '2020-05-12', NULL, 1, 4, 200000),
+(2, 'ODFDF84-HFYFD98', 'Dylan', 'Cepeda', 'dcepeda2108@gmail.com', '8296389252', 'Calle Puentezuelas, 55, Granada, España', 'Santo Domingo', 'Republica Dominicana', '2007-05-05', '2026-05-15', NULL, 4, 3, 150000);
 
 -- --------------------------------------------------------
 
@@ -166,7 +196,7 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`ID_Rol`, `Nombre`) VALUES
-(1, 'Admin');
+(1, 'Administrador');
 
 -- --------------------------------------------------------
 
@@ -201,7 +231,7 @@ CREATE TABLE `usuario` (
   `IdUsuario` int(11) NOT NULL,
   `Nombre` varchar(255) DEFAULT NULL,
   `Correo` varchar(255) DEFAULT NULL,
-  `Contraseña` varchar(255) DEFAULT NULL,
+  `Clave` varchar(255) DEFAULT NULL,
   `ID_Rol` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -220,7 +250,8 @@ INSERT INTO `usuario` (`IdUsuario`, `Nombre`, `Correo`, `Contraseña`, `ID_Rol`)
 -- Indices de la tabla `cargo`
 --
 ALTER TABLE `cargo`
-  ADD PRIMARY KEY (`IdCargo`);
+  ADD PRIMARY KEY (`IdCargo`),
+  ADD KEY `Id_Departamento` (`Id_Departamento`);
 
 --
 -- Indices de la tabla `deducciones`
@@ -233,7 +264,7 @@ ALTER TABLE `deducciones`
 -- Indices de la tabla `departamento`
 --
 ALTER TABLE `departamento`
-  ADD PRIMARY KEY (`IdDepartamento`);
+  ADD PRIMARY KEY (`Id_Departamento`);
 
 --
 -- Indices de la tabla `descuentos`
@@ -310,6 +341,12 @@ ALTER TABLE `usuario`
 --
 
 --
+-- Filtros para la tabla `cargo`
+--
+ALTER TABLE `cargo`
+  ADD CONSTRAINT `cargo_ibfk_1` FOREIGN KEY (`Id_Departamento`) REFERENCES `departamento` (`Id_Departamento`);
+
+--
 -- Filtros para la tabla `deducciones`
 --
 ALTER TABLE `deducciones`
@@ -327,7 +364,7 @@ ALTER TABLE `descuentos`
 ALTER TABLE `empleados`
   ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`ID_TipoContrato`) REFERENCES `tipocontrato` (`IdTipocontrato`),
   ADD CONSTRAINT `empleados_ibfk_2` FOREIGN KEY (`ID_Cargo`) REFERENCES `cargo` (`IdCargo`),
-  ADD CONSTRAINT `empleados_ibfk_3` FOREIGN KEY (`ID_Departamento`) REFERENCES `departamento` (`IdDepartamento`);
+  ADD CONSTRAINT `empleados_ibfk_3` FOREIGN KEY (`ID_Departamento`) REFERENCES `departamento` (`Id_Departamento`);
 
 --
 -- Filtros para la tabla `nomina`

@@ -13,7 +13,7 @@ router.post("/login", async (req, res) => {
     respuesta.handleLogin(req, res, "Success login successful", items);
   } catch (err) {
     console.error(err);
-    respuesta.handleLogin(req, res, "Database error", items);
+    respuesta.handleLogin(req, res, "Database error", err);
   }
 });
 

@@ -32,7 +32,7 @@ Dbase.on("error", (err) => {
 const ListarEmpleados = (table) => {
     return new Promise((resolve, reject) => {
       Dbase.query(
-        `SELECT Cedula, Nombre, Apellido, SalarioBase FROM ${table}`,
+        `SELECT * FROM ${table}`,
         (err, res) => {
           err ? reject(err) : resolve(res);
         }

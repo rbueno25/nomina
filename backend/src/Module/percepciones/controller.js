@@ -1,4 +1,4 @@
-const Dbase = require("../../database/db");
+const Dbase = require("../../database/Datapercepciones");
 
 const ListarEmpleados = () => {
     return Dbase.ListarEmpleados("empleados");
