@@ -3,17 +3,18 @@
 
 .table{
     display: flex;
-    justify-content: center;
+    text-align: center;
     align-items: center;
-    min-width: 75vh;
     min-height: 50vh;
+    width: 900px;
+    margin-left: 350px;
     font-family: 'poppins';
     font-size: 13px;
 }
 
 table{
     background-color: white;
-    text-align: left;
+    text-align: c;
     border-collapse: collapse;
 }
 

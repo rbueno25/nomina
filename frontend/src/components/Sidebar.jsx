@@ -32,10 +32,10 @@ const Sidebar = () => {
             </li>
 
             <li>
-                <a href="mostrar-proveedor.php">
+                <Link to={"/deducciones"}>
                 <MdMoneyOff className='icon'/>
                     <span className="link-name">Deducciones</span>
-                </a>
+                </Link>
             </li>
 
             <li>

@@ -1,27 +1,27 @@
-import React from 'react'
-import Table from '../components/Table'
-import { IoMdPersonAdd } from "react-icons/io";
-import '../css/ajustar.css'
+import React from "react";
+import Table from "../components/Table";
+import Sidebar from "../components/Sidebar";
+import Ajustar from "../components/ajustar";
+
 
 const Percepciones = () => {
-
   const rows = [
-     "IdEmpleados",
-     "Cedula",
-     "Nombre ",
-     "Apellido",
-     "Correo",
-     "Telefono",
-     "Direccion",
-     "Estado",
-     "Pais",
-     "FechaNac",
-     "FechaInicio",
-     "ID_TipoContrato",
-     "ID_Cargo",
-     "ID_Departamento",
-     "SalarioBase",
-  ]
+    "IdEmpleados",
+    "Cedula",
+    "Nombre ",
+    "Apellido",
+    "Correo",
+    "Telefono",
+    "Direccion",
+    "Estado",
+    "Pais",
+    "FechaNac",
+    "FechaInicio",
+    "ID_TipoContrato",
+    "ID_Cargo",
+    "ID_Departamento",
+    "SalarioBase",
+  ];
 
   const columns = [
     "IdEmpleados",
@@ -39,19 +39,18 @@ const Percepciones = () => {
     "Cargo",
     "Departamento",
     "Salario",
- ]
+  ];
 
- const api = {
-  url: "http://localhost:3000/api/percepciones"
- }
+  const api = {
+    url: "http://localhost:3000/api/percepciones",
+  };
   return (
     <>
-      <h1>Percepciones</h1>
-      <hr />
-      <button className='agregar'><IoMdPersonAdd /> Agregar</button>
-    <Table columns={columns} rows={rows} api={api} />
+    <Ajustar nombre="Percepciones" />
+      <Table columns={columns} rows={rows} api={api} />
+    <Sidebar/>
     </>
-  )
-}
+  );
+};
 
-export default Percepciones
+export default Percepciones;
