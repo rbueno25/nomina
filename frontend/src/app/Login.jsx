@@ -43,24 +43,26 @@ const Login = () => {
 
           <div className="input-groupt">
             <div className="input-feild">
-              <div className="lala">
+              <div className="ok">
                 <label htmlFor="">Nombre de Usuario:</label>
                 <input
                   onChange={(event) => {
                     setValue({ ...value, username: event.target.value });
                   }}
                   type="text"
+                  className="input"
                 />
               </div>
             </div>
             <div className="input-feild">
-              <div className="lala">
+              <div className="ok">
                 <label htmlFor="">Contraseña: </label>
                 <input
                   onChange={(event) => {
                     setValue({ ...value, clave: event.target.value });
                   }}
                   type="password"
+                  className="input"
                 />
               </div>
             </div>
