@@ -9,6 +9,8 @@ const config =  require("./config")
 const clientes = require("./Module/usuario/router");
 const login = require("./Module/usuario/router");
 const percepciones = require("./Module/percepciones/router");
+const deducciones = require("./Module/deducciones/router");
+
 
 const  app = express()
 
@@ -32,5 +34,6 @@ app.use(cookie())
 app.use("/api/clientes", clientes)
 app.use("/api/users", login)
 app.use("/api/percepciones", percepciones)
+app.use("/api/deducciones", deducciones)
 
 module.exports = app;
