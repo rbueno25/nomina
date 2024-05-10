@@ -39,17 +39,17 @@ const Sidebar = () => {
             </li>
 
             <li>
-                <a href="mostrar-compra.php">
+                <Link to={"/empleados"}>
                 <MdPeopleAlt className='icon'/>
                     <span className="link-name">Empleados</span>
-                </a>
+                </Link>
             </li>
 
             <li>
-                <a href="usuario.php">
+                <Link to={"/usuarios"}>
                     <FaUserAlt className='icon'/>
                     <span className="link-name">Usuarios</span>
-                </a>
+                </Link>
             </li>
             
         </ul>

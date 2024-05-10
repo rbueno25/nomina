@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`Username: ${value.username} Clave: ${value.clave}`);
+    console.log(`username: ${value.username} clave: ${value.clave}`);
 
     axios
     .post("http://localhost:3000/api/users/login", value)

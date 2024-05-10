@@ -4,6 +4,8 @@ import Dashboard from '../app/Dashboard';
 import Percepciones from "../app/percepciones";
 import Deducciones from "../app/deducciones";
 import Agregar from "../components/Agregar";
+import Usuarios from "../app/usuarios";
+import Empleados from "../app/empleados";
 import Login from '../app/Login';
 
 const Path = () => {
@@ -15,6 +17,8 @@ const Path = () => {
                 <Route path="/agregar" element={<Agregar />} />
                 <Route path="/percepciones" element={<Percepciones />} />
                 <Route path="/deducciones" element={<Deducciones />} />
+                <Route path="/empleados" element={<Empleados />} />
+                <Route path="/usuarios" element={<Usuarios />} />
             </Routes>
         </Router>
     )

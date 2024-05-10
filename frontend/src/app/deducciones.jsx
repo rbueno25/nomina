@@ -6,39 +6,17 @@ import Ajustar from '../components/ajustar'
 const Deducciones = () => {
 
   const rows = [
-     "IdEmpleados",
-     "Cedula",
-     "Nombre ",
-     "Apellido",
-     "Correo",
-     "Telefono",
-     "Direccion",
-     "Estado",
-     "Pais",
-     "FechaNac",
-     "FechaInicio",
-     "ID_TipoContrato",
-     "ID_Cargo",
-     "ID_Departamento",
-     "SalarioBase",
+    "IdDeducciones",
+    "Nombre",
+    "Cantidad",
+    "ID_Empleado",
   ]
 
   const columns = [
-    "IdEmpleados",
-    "Cedula",
-    "Nombre ",
-    "Apellido",
-    "Correo",
-    "Telefono",
-    "Direccion",
-    "Estado",
-    "Pais",
-    "FechaNac",
-    "FechaInicio",
-    "TipoContrato",
-    "Cargo",
-    "Departamento",
-    "Salario",
+    "IdDeducciones",
+    "Nombre",
+    "Cantidad",
+    "ID_Empleado",
  ]
 
  const api = {

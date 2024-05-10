@@ -6,39 +6,17 @@ import Ajustar from "../components/ajustar";
 
 const Percepciones = () => {
   const rows = [
-    "IdEmpleados",
-    "Cedula",
-    "Nombre ",
-    "Apellido",
-    "Correo",
-    "Telefono",
-    "Direccion",
-    "Estado",
-    "Pais",
-    "FechaNac",
-    "FechaInicio",
-    "ID_TipoContrato",
-    "ID_Cargo",
-    "ID_Departamento",
-    "SalarioBase",
+    "IdPercepciones",
+    "Nombre",
+    "Cantidad",
+    "ID_Empleado",
   ];
 
   const columns = [
-    "IdEmpleados",
-    "Cedula",
-    "Nombre ",
-    "Apellido",
-    "Correo",
-    "Telefono",
-    "Direccion",
-    "Estado",
-    "Pais",
-    "FechaNac",
-    "FechaInicio",
-    "TipoContrato",
-    "Cargo",
-    "Departamento",
-    "Salario",
+    "IdPercepciones",
+    "Nombre",
+    "Cantidad",
+    "ID_Empleado",
   ];
 
   const api = {
