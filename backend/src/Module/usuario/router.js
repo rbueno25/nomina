@@ -17,5 +17,10 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get("/", async(req, res) => {
+  const items = await controlador.ListarUsuarios();
+  respuesta.success(req, res, items, 200);
+});
+
 
 module.exports = router;

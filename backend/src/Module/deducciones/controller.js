@@ -1,9 +1,9 @@
-const Dbase = require("../../database/Datapercepciones");
+const Dbase = require("../../database/Datadeducciones");
 
-const ListarEmpleados = () => {
-    return Dbase.ListarEmpleados("empleados");
+const ListarDeducciones = () => {
+    return Dbase.ListarDeducciones("deducciones");
 }
 
 module.exports = {
-    ListarEmpleados,
+    ListarDeducciones,
 }

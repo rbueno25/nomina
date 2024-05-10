@@ -19,6 +19,6 @@ exports.handleLogin = (req, res, mensaje, items) => {
     if (items.length > 0) {
       res.json({ status: `${mensaje}` });
     } else {
-      res.json({ Error: `Error ${mensaje}` });
+      res.json({ Error: `Error${mensaje}` });
     }
   };

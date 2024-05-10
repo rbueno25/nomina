@@ -10,6 +10,8 @@ const clientes = require("./Module/usuario/router");
 const login = require("./Module/usuario/router");
 const percepciones = require("./Module/percepciones/router");
 const deducciones = require("./Module/deducciones/router");
+const empleados = require("./Module/empleado/router");
+const usuarios = require("./Module/usuario/router");
 
 
 const  app = express()
@@ -24,7 +26,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(
     cors({
-        origin: "http://localhost:5173",
+        origin: "http://localhost:5174",
         credentials: true
     })
 )
@@ -35,5 +37,8 @@ app.use("/api/clientes", clientes)
 app.use("/api/users", login)
 app.use("/api/percepciones", percepciones)
 app.use("/api/deducciones", deducciones)
+app.use("/api/empleados", empleados)
+app.use("/api/usuarios", usuarios)
+
 
 module.exports = app;

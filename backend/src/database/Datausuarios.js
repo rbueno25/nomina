@@ -29,7 +29,7 @@ Dbase.on("error", (err) => {
 
 //Listar Empleados
 
-const ListarPercepciones= (table) => {
+const ListarUsuarios= (table) => {
     return new Promise((resolve, reject) => {
       Dbase.query(
         `SELECT * FROM ${table}`,
@@ -40,7 +40,19 @@ const ListarPercepciones= (table) => {
     });
   };
 
+  const login = (table, data) => {
+    return new Promise((resolve, reject) => {
+      Dbase.query(
+        `SELECT * FROM ${table} WHERE Nombre = '${data.username}' and Clave = '${data.clave}' `,
+        (err, res) => {
+          err ? reject(err) : resolve(res);
+        }
+      );
+    });
+  };
+
 
   module.exports = {
-    ListarPercepciones,
+    ListarUsuarios,
+    login,
   }

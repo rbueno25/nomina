@@ -29,7 +29,7 @@ Dbase.on("error", (err) => {
 
 //Listar Empleados
 
-const ListarEmpleados = (table) => {
+const ListarDeducciones = (table) => {
     return new Promise((resolve, reject) => {
       Dbase.query(
         `SELECT * FROM ${table}`,
@@ -42,5 +42,5 @@ const ListarEmpleados = (table) => {
 
 
   module.exports = {
-    ListarEmpleados,
+    ListarDeducciones,
   }

@@ -29,7 +29,7 @@ Dbase.on("error", (err) => {
 
 //Listar Empleados
 
-const ListarPercepciones= (table) => {
+const ListarEmpleados= (table) => {
     return new Promise((resolve, reject) => {
       Dbase.query(
         `SELECT * FROM ${table}`,
@@ -41,6 +41,17 @@ const ListarPercepciones= (table) => {
   };
 
 
+  const AgregarEmpleados = (table, data) => {
+    return new Promise((resolve, reject) => {
+      Dbase.query(`INSERT INTO ${table} SET ?;`, [data], (err, res) => {
+        err ? reject(err) : resolve(res);
+      });
+    });
+  };
+  
+
+
   module.exports = {
-    ListarPercepciones,
+    ListarEmpleados,
+    AgregarEmpleados,
   }

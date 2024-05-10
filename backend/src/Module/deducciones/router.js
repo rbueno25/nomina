@@ -4,7 +4,7 @@ const controlador = require("./controller");
 const router = express.Router();
 
 router.get("/", async(req, res) => {
-   const items = await controlador.ListarEmpleados();
+   const items = await controlador.ListarDeducciones();
    respuesta.success(req, res, items, 200);
 });
 

@@ -7,7 +7,7 @@ module.exports ={
     mysql :{
         host: process.env.mysqlHost || "localhost",
         user: process.env.mysqlUser || "root",
-        password: process.env.mysqlPassword || "",
+        password: process.env.mysqlPassword || "Rinaldi12",
         dbname: process.env.mysqlDb || "nomina"
     }
 }
